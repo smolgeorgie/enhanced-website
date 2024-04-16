@@ -4,56 +4,113 @@ svg {
     fill: white;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    margin: 0;
 }
 
-.nav-bar {
-    list-style-type: none;
+:root {
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --hamburger-margin: 8px;
+    --foreground: white;
+    --background: black;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    left: var(--hamburger-margin);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: white;
+    --background: black;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);
+    box-shadow: 0 0 0 1px var(--foreground);
+}
+
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+        rotate var(--animation-timing), translate var(--animation-timing),
+        background-color var(--animation-timing);
+}
+
+
+.hamburger-menu input {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: black;
+    appearance: none;
+    outline: none;
+    pointer-events: none;
 }
 
-.menu {
-    display: none;
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
 }
 
-.menu-icon {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    z-index: 2;
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
 }
 
-#check {
-    position: absolute;
+.hamburger-menu input:checked {
     opacity: 0;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-    z-index: 1;
+    width: 0;
 }
 
-#check:checked~.menu {
-    display: block;
+.sidebar {
+    transition: transform var(--animation-timing);
+    transform: translateX(-100%);
+    padding: 0.5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    background: var(--background);
+    color: var(--foreground);
+    max-width: 10rem;
+    min-height: 100vh;
 }
 
-.menu li {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.hamburger-menu:has(input:checked)+.sidebar {
+    transform: translateX(0);
 }
 
-.menu li:hover {
-    background-color: #111;
-}
+
+/* .hamburger-menu:has(input:checked)+.sidebar {
+    translate: 0;
+} */
+
+
+/* https://www.youtube.com/watch?v=dAIVbLrAb_U */
