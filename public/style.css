@@ -50,7 +50,7 @@ h1 {
     position: absolute;
     top: var(--hamburger-margin);
     left: var(--hamburger-margin);
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 }
 
@@ -108,9 +108,12 @@ h1 {
 }
 
 .sidebar {
+    position: fixed;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     transition: transform var(--animation-timing);
     transform: translateY(-100%);
     padding: 0.5rem 1rem;
