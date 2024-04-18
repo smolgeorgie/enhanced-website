@@ -2,13 +2,54 @@
     <%- include('partials/testing') %>
 
         <main>
-            <article class="example">
-                <h2>Progression Dashboard</h2>
-                <p>Welkom op de progression dashboard van de opleiding Communication and Multimedia Design. Dit
-                    dashboard is gemaakt om jouw voortgang in de opleiding bij te houden. Je kunt hier je cijfers en
-                    feedback van de afgelopen periodes bekijken. Ook kun je hier je persoonlijke ontwikkeling bijhouden
-                    en je doelen voor de toekomst vastleggen.</p>
+            <div class="stakeholder-filter">
+                <form action="/filter" method="POST">
+                    <select name="filter" id="filter">
+                        <option value="alles">Stakeholders</option>
+                        <option value="cijfers">Fabriek Staal</option>
+                        <option value="feedback">Supermarkt Jombu</option>
+                        <option value="doelen">Nog iets</option>
+                    </select>
+                </form>
+            </div>
+
+            <article class="completed-bar">
+                <h3>Completed</h3>
+                <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                        fill="#ffffff" class="fill-030708"></path>
+                </svg>
             </article>
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score">Score komt hier</div>
+            </article>
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score">Score komt hier</div>
+            </article>
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score">Score komt hier</div>
+            </article>
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score">Score komt hier</div>
+            </article>
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score">Score komt hier</div>
+            </article>
+            <article class="add-items">
+                <button class="popover">+ Add new item</button>
+            </article>
+
         </main>
 
 
