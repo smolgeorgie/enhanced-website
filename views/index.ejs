@@ -1,46 +1,48 @@
 <%- include('partials/head') %>
     <%- include('partials/testing') %>
 
-        <div class="stakeholder-filter">
-            <form action="/filter" method="POST">
-                <select name="filter" id="filter">
-                    <option value="alles">Stakeholders</option>
-                    <option value="cijfers">Fabriek X</option>
-                    <option value="feedback">Leverancier A</option>
-                    <option value="doelen">Omgeving A</option>
-                </select>
-            </form>
-        </div>
+        <main>
 
-        <article class="completed-bar">
-            <h3>Completed</h3>
-            <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-                    fill="#ffffff" class="fill-030708"></path>
-            </svg>
-        </article>
-        <article class="completed-section">
+            <div class="stakeholder-filter">
+                <form action="/filter" method="POST">
+                    <select name="filter" id="filter">
+                        <option value="alles">Stakeholders</option>
+                        <option value="cijfers">Fabriek X</option>
+                        <option value="feedback">Leverancier A</option>
+                        <option value="doelen">Omgeving A</option>
+                    </select>
+                </form>
+            </div>
 
-            <article class="completed-content">
-                <img src="directus" alt="directus">
-                <h4> Importeer naam hier </h4>
-                <div class="score-box">
-                    <form method="post" action="/">
-                        <button type="submit" id="downScore" name="down" value="1"> - </button>
-                        <span class="score">
-                            <%= whatever %>
-                        </span>
-                        <button type="submit" id="upScore" name="up" value="1"> + </button>
-                    </form>
-                </div>
+            <article class="completed-bar">
+                <h3>Completed</h3>
+                <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                        fill="#ffffff" class="fill-030708"></path>
+                </svg>
+            </article>
+            <article class="completed-section">
+
+                <article class="completed-content">
+                    <img src="directus" alt="directus">
+                    <h4> Importeer naam hier </h4>
+                    <div class="score-box">
+                        <form method="post" action="/">
+                            <button type="submit" id="downScore" name="down" value="1"> - </button>
+                            <span class="score">
+                                <%= whatever %>
+                            </span>
+                            <button type="submit" id="upScore" name="up" value="1"> + </button>
+                        </form>
+                    </div>
+                </article>
+
             </article>
 
-        </article>
-
-        <div class="add-items">
-            <button>+ Add new item</button>
-        </div>
+            <div class="add-items">
+                <button>+ Add new item</button>
+            </div>
 
         </main>
 
