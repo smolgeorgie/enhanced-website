@@ -22,7 +22,7 @@ const companiesData = await fetchJson(apiUrl + '/hf_companies')
 
 console.log(scoresData.data)
 
-let whatever = 75
+let whatever = 0
 
 // Stel de routes op voor alle pagina's, de routes die hier nu in zitten gelden alleen voor de sdg en score pagina!
 app.get('/', function (request, response) {
