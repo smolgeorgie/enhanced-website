@@ -22,7 +22,7 @@ const companiesData = await fetchJson(apiUrl + '/hf_companies')
 
 console.log(scoresData.data)
 
-let whatever = 0
+let score = 0
 
 // Stel de routes op voor alle pagina's, de routes die hier nu in zitten gelden alleen voor de sdg en score pagina!
 app.get('/', function (request, response) {
@@ -31,15 +31,15 @@ app.get('/', function (request, response) {
         stakeholder: stakeholdersData.data,
         score: scoresData.data,
         company: companiesData.data,
-        whatever: whatever
+        score: score
     })
 })
 
 app.post('/', (req, res) => {
-    if (req.body.up && whatever < 5) {
-        whatever = whatever + 1;
-    } else if (!req.body.up && whatever > -5) {
-        whatever = whatever - 1;
+    if (req.body.up && score < 5) {
+        score = score + 1;
+    } else if (!req.body.up && score > -5) {
+        score = score - 1;
     }
     res.redirect('/');
 });
