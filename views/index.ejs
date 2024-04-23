@@ -20,22 +20,24 @@
                     fill="#ffffff" class="fill-030708"></path>
             </svg>
         </article>
-        <article class="completed-content">
-            <img src="directus" alt="directus">
-            <h4> Importeer naam hier </h4>
-            <div class="score-box">
-                <button id="downScore"> - </button>
-                <span class="score">0</span>
-                <button id="upScore"> + </button>
-            </div>
-            <!-- <div class="score-box">
-                    <span class="score">0</span>
-                    <div id="popover" class="popover">
-                        <p>Popover content...</p>
-                        <button id="closePopoverButton">Close</button>
-                    </div>
-                </div> -->
+        <article class="completed-section">
+
+            <article class="completed-content">
+                <img src="directus" alt="directus">
+                <h4> Importeer naam hier </h4>
+                <div class="score-box">
+                    <form method="post" action="/">
+                        <button type="submit" id="downScore" name="down" value="1"> - </button>
+                        <span class="score">
+                            <%= whatever %>
+                        </span>
+                        <button type="submit" id="upScore" name="up" value="1"> + </button>
+                    </form>
+                </div>
+            </article>
+
         </article>
+
         <div class="add-items">
             <button>+ Add new item</button>
         </div>

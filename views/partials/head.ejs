@@ -5,30 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
     <title>progression dashboard</title>
 </head>
 
 <body>
 
-    <article class="hamburger-wrapper">
-        <h1> Crossmarx Progression Dashboard
-    </article>
-
-    <label class="hamburger-menu">
-        <input type="checkbox">
-    </label>
-
-    <aside class="sidebar">
+    <header class="header">
         <nav>
-            <div>This</div>
-            <div>Is</div>
-            <div>The</div>
-            <div>Sidebar</div>
-            <!-- <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li> -->
+            <div class="logo">
+                <a href="index.html">Crossmar<span>X</span></a>
+            </div>
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+            <label for="menu-toggle" class="menu-icon"
+                onclick="document.getElementById('menu-toggle').click()">&#9776;</label>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Connect</a></li>
+            </ul>
         </nav>
-    </aside>
+    </header>
+
+    <script>
+        // JavaScript to toggle the menu when the menu icon is clicked
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            document.getElementById('menu-toggle').click();
+        });
+    </script>
