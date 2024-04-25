@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
     } else if (!req.body.up && score > -5) {
         score = score - 1;
     }
-    res.redirect('/');
+    res.redirect(303, ('/'));
 });
 
 // Stel het poortnummer in waar express op moet gaan luisteren
