@@ -1,3 +1,4 @@
-document.querySelector('.menu-icon').addEventListener('click', function () {
-    document.getElementById('menu-toggle').click();
-});
+function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('menu-open');
+}

@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 // Stel het basis endpoint in
 
 const apiUrl = 'https://fdnd-agency.directus.app/items'
+// Haal de gegevens op voor de sdg's, stakeholders, scores en bedrijven
 const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
 const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
 const scoresData = await fetchJson(apiUrl + '/hf_scores')
@@ -44,6 +45,7 @@ app.post('/', (req, res) => {
     res.redirect(303, ('/'));
 });
 
+
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8009)
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
@@ -51,3 +53,20 @@ app.listen(app.get('port'), function () {
     // Toon een bericht in de console en geef het poortnummer door
     console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+// app.get('/', (request, response) => {
+//     console.log('app.get function triggered successfully');
+//     Promise.all([
+//         fetchJson('https://fdnd-agency.directus.app/items/hf_scores'),
+//         fetchJson('https://fdnd-agency.directus.app/items/hf_sdgs')
+//     ]).then(([scoresData, sdgData]) => {
+//         response.send('/', {
+//             scores: scoresData.data,
+//             sdgs: sdgData.data
+//         });        
+//     }).catch(error => {
+//         console.log('error', error);
+//         response.status(500).send('Er is iets misgegaan');
+//     });
+// });
