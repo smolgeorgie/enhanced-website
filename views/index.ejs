@@ -14,34 +14,113 @@
                 </form>
             </div>
 
-            <article class="completed-bar">
-                <h3>Completed</h3>
-                <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-                        fill="#ffffff" class="fill-030708"></path>
-                </svg>
-            </article>
-            <article class="completed-section">
+            <div class="all-content">
 
-                <article class="completed-content">
-                    <img src="directus" alt="directus">
-                    <h4> Importeer naam hier </h4>
-                    <div class="score-box">
-                        <form method="post" action="/">
-                            <button type="submit" id="downScore" name="down" value="1"> - </button>
-                            <span class="score">
-                                <%= score %>
-                            </span>
-                            <button type="submit" id="upScore" name="up" value="1"> + </button>
-                        </form>
+                <div class="completed-container">
+
+                    <article class="completed-bar">
+                        <h3>Completed</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
+
+                    <article class="completed-section">
+
+                        <article class="completed-content">
+                            <img src="directus" alt="directus">
+                            <h4> Importeer naam hier </h4>
+                            <div class="score-box">
+                                <form method="post" action="/">
+                                    <button type="submit" id="downScore" name="down" value="1"> - </button>
+                                    <span class="score">
+                                        <%= score %>
+                                    </span>
+                                    <button type="submit" id="upScore" name="up" value="1"> + </button>
+                                </form>
+                            </div>
+                        </article>
+
+                    </article>
+
+                    <div class="add-items">
+                        <button>+ Add new item</button>
                     </div>
-                </article>
 
-            </article>
+                </div>
 
-            <div class="add-items">
-                <button>+ Add new item</button>
+                <div class="awaited-container">
+
+                    <article class="awaited-bar">
+                        <h3>Awaited</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
+
+                    <article class="awaited-section">
+
+                        <article class="awaited-content">
+                            <img src="directus" alt="directus">
+                            <h4> Importeer naam hier </h4>
+                            <div class="score-box">
+                                <form method="post" action="/">
+                                    <button type="submit" id="downScore" name="down" value="1"> - </button>
+                                    <span class="score">
+                                        <%= score %>
+                                    </span>
+                                    <button type="submit" id="upScore" name="up" value="1"> + </button>
+                                </form>
+                            </div>
+                        </article>
+
+                    </article>
+
+                    <div class="add-items">
+                        <button>+ Add new item</button>
+                    </div>
+
+                </div>
+
+                <div class="na-container">
+
+                    <article class="not_applicable-bar">
+                        <h3>Not Applicable</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
+
+                    <article class="not_applicable-section">
+
+                        <article class="not_applicable-content">
+                            <img src="directus" alt="directus">
+                            <h4> Importeer naam hier </h4>
+                            <div class="score-box">
+                                <form method="post" action="/">
+                                    <button type="submit" id="downScore" name="down" value="1"> - </button>
+                                    <span class="score">
+                                        <%= score %>
+                                    </span>
+                                    <button type="submit" id="upScore" name="up" value="1"> + </button>
+                                </form>
+                            </div>
+                        </article>
+
+                    </article>
+
+                    <div class="add-items">
+                        <button>+ Add new item</button>
+                    </div>
+
+                </div>
+
             </div>
 
         </main>

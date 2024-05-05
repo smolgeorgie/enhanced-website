@@ -21,6 +21,7 @@ const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
 const scoresData = await fetchJson(apiUrl + '/hf_scores')
 const companiesData = await fetchJson(apiUrl + '/hf_companies')
 
+
 console.log(scoresData.data)
 
 let score = 0
@@ -36,6 +37,26 @@ app.get('/', function (request, response) {
     })
 })
 
+fetch('https://fdnd-agency.directus.app/items/hf_scores?fields=*,*.*,*.*.*&filter=%7B%22stakeholder_id%22:%221%22%7D')
+.then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Assuming the data is an array of objects and each object has `score`, `sdg`, and `title` properties
+    data.forEach(item => {
+      console.log('Score:', item.score);
+      console.log('SDG:', item.sdg);
+      console.log('Title:', item.title);
+    });
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+  console.log(item.score)
+
 app.post('/', (req, res) => {
     if (req.body.up && score < 5) {
         score = score + 1;
@@ -44,6 +65,7 @@ app.post('/', (req, res) => {
     }
     res.redirect(303, ('/'));
 });
+
 
 
 // Stel het poortnummer in waar express op moet gaan luisteren

@@ -139,6 +139,7 @@ nav {
 }
 
 
+
 /* #endregion Header */
 
 /* #footer */
@@ -174,7 +175,9 @@ select {
 
 /* #region COMPLETED AREA */
 
-.completed-bar {
+.completed-bar,
+.awaited-bar,
+.not_applicable-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,7 +196,9 @@ select {
     }
 }
 
-.completed-section {
+.completed-section,
+.awaited-section,
+.not_applicable-section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -204,7 +209,9 @@ select {
     overflow: auto;
 }
 
-.completed-content {
+.completed-content,
+.awaited-content,
+.not_applicable-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -253,5 +260,19 @@ select {
         border: none;
         background: transparent;
         color: white;
+    }
+}
+
+@media (min-width: 950px) {
+
+    .all-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .completed-section,
+    .awaited-section,
+    .not_applicable-section {
+        max-height: 35rem;
     }
 }
