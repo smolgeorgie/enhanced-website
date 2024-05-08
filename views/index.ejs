@@ -3,36 +3,125 @@
 
         <main>
 
-            <div class="stakeholder-filter">
+            <article class="stakeholder-filter">
                 <form action="/filter" method="POST">
                     <select name="filter" id="filter">
                         <option value="alles">Stakeholders</option>
-                        <option value="cijfers">Fabriek X</option>
-                        <option value="feedback">Leverancier A</option>
-                        <option value="doelen">Omgeving A</option>
+                        <% stakeholder.forEach(function(stakeholders) { %>
+                            <option value="title">
+                                <%= stakeholders.name%>
+                            </option>
+                            <% }); %>
                     </select>
                 </form>
-            </div>
+            </article>
 
-            <div class="completed-container">
+            <div class="all-content">
 
-                <article class="completed-bar">
-                    <h3>Completed</h3>
-                    <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-                            fill="#ffffff" class="fill-030708"></path>
-                    </svg>
-                </article>
+                <div class="completed-container">
 
-                <% sdgs.forEach(function(sdgs) { %>
+                    <article class="completed-bar">
+                        <h3>Completed</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
 
-                    <article class="completed-section">
 
-                        <article class="completed-content">
+                    <div class="scrollbar">
+
+                        <% sdgs.forEach(function(sdgs) { %>
+
+                            <article class="completed-content">
+                                <picture class="sdg">
+                                    <source
+                                        srcset="https://fdnd-agency.directus.app/assets/<%= sdgs.icon %>?format=avif&eight=450&width=50"
+                                        type="image/avif">
+                                    <source
+                                        srcset="https://fdnd-agency.directus.app/assets/<%= sdgs.icon %>?format=webp&eight=450&width=50"
+                                        type="image/webp">
+                                    <img src="https://fdnd-agency.directus.app/assets/<%= sdgs.icon %>"
+                                        alt="<%= sdgs.title %>" class="sdgs-img">
+                                </picture>
+                                <h4>
+                                    <%= sdgs.title %>
+                                </h4>
+                                <div class="score-box">
+                                    <form method="post" action="/">
+                                        <button type="submit" id="downScore" name="down" value="1"> - </button>
+                                        <span class="score">
+                                            <%= score %>
+                                        </span>
+                                        <button type="submit" id="upScore" name="up" value="1"> + </button>
+                                    </form>
+                                </div>
+                            </article>
+
+                            <% }); %>
+
+                    </div>
+
+
+                    <article class="add-items">
+                        <button>+ Add new item</button>
+                    </article>
+
+                </div>
+
+                <div class="awaited-container">
+
+                    <article class="awaited-bar">
+                        <h3>Awaited</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
+
+                    <article class="scrollbar">
+
+                        <article class="awaited-content">
+                            <img src="directus" alt="directus">
+                            <h4> Importeer naam hier </h4>
+                            <div class="score-box">
+                                <form method="post" action="/">
+                                    <button type="submit" id="downScore" name="down" value="1"> - </button>
+                                    <span class="score">
+                                        <%= score %>
+                                    </span>
+                                    <button type="submit" id="upScore" name="up" value="1"> + </button>
+                                </form>
+                            </div>
+                        </article>
+
+                    </article>
+
+                    <div class="add-items">
+                        <button>+ Add new item</button>
+                    </div>
+
+                </div>
+
+                <div class="na-container">
+
+                    <article class="not_applicable-bar">
+                        <h3>Not Applicable</h3>
+                        <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+                                fill="#ffffff" class="fill-030708"></path>
+                        </svg>
+                    </article>
+
+                    <article class="scrollbar">
+
+                        <article class="not_applicable-content">
                             <img src="directus" alt="directus">
                             <h4>
-                                <%= sdgs.data %>
+                                Naam hier
                             </h4>
                             <div class="score-box">
                                 <form method="post" action="/">
@@ -47,84 +136,11 @@
 
                     </article>
 
-                    <% }); %>
+                    <div class="add-items">
+                        <button>+ Add new item</button>
+                    </div>
 
-            </div>
-
-            <article class="add-items">
-                <button>+ Add new item</button>
-            </article>
-
-
-            <div class="awaited-container">
-
-                <article class="awaited-bar">
-                    <h3>Awaited</h3>
-                    <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-                            fill="#ffffff" class="fill-030708"></path>
-                    </svg>
-                </article>
-
-                <article class="awaited-section">
-
-                    <article class="awaited-content">
-                        <img src="directus" alt="directus">
-                        <h4> Importeer naam hier </h4>
-                        <div class="score-box">
-                            <form method="post" action="/">
-                                <button type="submit" id="downScore" name="down" value="1"> - </button>
-                                <span class="score">
-                                    <%= score %>
-                                </span>
-                                <button type="submit" id="upScore" name="up" value="1"> + </button>
-                            </form>
-                        </div>
-                    </article>
-
-                </article>
-
-                <div class="add-items">
-                    <button>+ Add new item</button>
                 </div>
-
-            </div>
-
-            <div class="na-container">
-
-                <article class="not_applicable-bar">
-                    <h3>Not Applicable</h3>
-                    <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-                            fill="#ffffff" class="fill-030708"></path>
-                    </svg>
-                </article>
-
-                <article class="not_applicable-section">
-
-                    <article class="not_applicable-content">
-                        <img src="directus" alt="directus">
-                        <h4> Importeer naam hier </h4>
-                        <div class="score-box">
-                            <form method="post" action="/">
-                                <button type="submit" id="downScore" name="down" value="1"> - </button>
-                                <span class="score">
-                                    <%= score %>
-                                </span>
-                                <button type="submit" id="upScore" name="up" value="1"> + </button>
-                            </form>
-                        </div>
-                    </article>
-
-                </article>
-
-                <div class="add-items">
-                    <button>+ Add new item</button>
-                </div>
-
-            </div>
 
             </div>
 

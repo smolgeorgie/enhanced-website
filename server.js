@@ -36,6 +36,26 @@ app.get('/', function (request, response) {
     })
 })
 
+
+app.post('/', (req, res) => {
+  if (req.body.up && score < 5) {
+    score = score + 1;
+  } else if (!req.body.up && score > -5) {
+    score = score - 1;
+  }
+  res.redirect(303, ('/'));
+});
+
+
+
+// Stel het poortnummer in waar express op moet gaan luisteren
+app.set('port', process.env.PORT || 8009)
+// Start express op, haal daarbij het zojuist ingestelde poortnummer op
+app.listen(app.get('port'), function () {
+  // Toon een bericht in de console en geef het poortnummer door
+  console.log(`Application started on http://localhost:${app.get('port')}`)
+})
+
 // fetch('https://fdnd-agency.directus.app/items/hf_scores?fields=*,*.*,*.*.*&filter=%7B%22stakeholder_id%22:%221%22%7D')
 //     .then(response => {
 //         if (!response.ok) {
@@ -56,26 +76,6 @@ app.get('/', function (request, response) {
 //     });
 
 //   console.log(item);
-
-app.post('/', (req, res) => {
-    if (req.body.up && score < 5) {
-        score = score + 1;
-    } else if (!req.body.up && score > -5) {
-        score = score - 1;
-    }
-    res.redirect(303, ('/'));
-});
-
-
-
-// Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8009)
-// Start express op, haal daarbij het zojuist ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-    // Toon een bericht in de console en geef het poortnummer door
-    console.log(`Application started on http://localhost:${app.get('port')}`)
-})
-
 
 // app.get('/', (request, response) => {
 //     console.log('app.get function triggered successfully');
