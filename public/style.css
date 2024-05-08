@@ -204,10 +204,6 @@ select {
 } */
 
 .scrollbar {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; */
     margin: var(--content-border-margin);
     max-height: 25rem;
     overflow: auto;
@@ -223,8 +219,6 @@ select {
     background-color: var(--content-background);
     width: 100%;
     height: var(--sdg-content-height);
-    /* max-height: 22rem;
-    overflow: auto; */
 
     & img {
         margin: 0 0 0 1.5rem;
