@@ -196,13 +196,6 @@ select {
     }
 }
 
-/* .completed-container,
-.awaited-container,
-.na-container {
-    max-height: 40rem;
-    overflow: auto;
-} */
-
 .scrollbar {
     margin: var(--content-border-margin);
     max-height: 25rem;
