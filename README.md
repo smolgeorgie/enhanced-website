@@ -1,33 +1,44 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+### Progressive Enhancement Website for Business Sustainability
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+***Description***
 
-## Inhoudsopgave
+This repository contains the code for a Progressive Enhancement website aimed at businesses interested in sustainability. The website allows businesses to add stakeholders and assess their scores for the Sustainable Development Goals (SDGs) to evaluate their handprint and footprint.
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+***Features***
 
-## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+* HTML: Semantic markup for content structure and accessibility.
+* CSS: Styling and layout to improve the user interface and experience.
+* JavaScript: Progressive enhancement and interactivity, making core functionality available on all devices.
+* Progressive Enhancement: The website is built using progressive enhancement principles, ensuring a robust and accessible experience on all devices and browsers, regardless of their capabilities.
+* Accessibility: Use of semantic HTML to ensure that the website is accessible to all users.
+* Performance: Minification, lazy loading, and caching techniques to improve website performance and speed.
+* EJS (Embedded JavaScript): For generating dynamic HTML pages on the server-side.
+* Node.js: A JavaScript runtime for running server-side code and building web applications.
+* Directus API: A headless CMS (Content Management System) for managing content and data, providing flexibility and scalability.
 
-## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+***Installation***
 
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+***Follow these steps to run the website locally***:
 
-## Bronnen
+***Clone this repository to your local machine:***
+Bash
+git clone https://github.com/username/S10-enhanced-website.git
+***Wees voorzichtig met code.***
+content_copy
+***Navigate to the project directory:***
+Bash
+cd S10-enhanced-website
+***Wees voorzichtig met code.***
+content_copy
+Open the index.ejs file in your favorite web browser.
 
-## Licentie
+***Explanation***
 
-This project is licensed under the terms of the [MIT license](./LICENSE).
+The first step clones the repository from GitHub to your local machine. This will create a copy of the code on your computer.
+The second step navigates to the project directory. This is where the code for the website is stored.
+The third step opens the index.ejs file in your web browser. This file is the main HTML page for the website.
+Additional Notes
+
+You will need to have Git installed on your computer in order to clone the repository. You can download Git from https://git-scm.com/downloads.
+You will need to have a web browser installed on your computer in order to open the index.ejs file.
